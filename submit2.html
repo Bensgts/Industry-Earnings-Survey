@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submission — Industry Earnings Survey</title>
+  <meta name="description" content="Review your answers and submit the Industry Earnings Survey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__utility">
+      <div class="utility-inner">
+        <nav aria-label="Site utility">
+          <ul class="utility-nav-list">
+            <li><a class="toolbar-link" href="#">Help</a></li>
+            <li><a class="toolbar-link" href="#">Contact Us</a></li>
+            <li><a class="toolbar-link" href="#">Survey Information</a></li>
+            <li>
+              <a class="toolbar-button-light" href="save-exit.html" aria-label="Save your progress and exit the survey">
+                Save &amp; Exit
+                <svg class="icon-exit" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+                  <path d="M7.09 12.59L8.5 14L13.5 9L8.5 4L7.09 5.41L9.67 8H0V10H9.67L7.09 12.59ZM16 0H2C0.89 0 0 0.9 0 2V6H2V2H16V16H2V12H0V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V2C18 0.9 17.1 0 16 0Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="site-header__title">
+      <div class="title-inner">
+        <p class="site-title">Industry Earnings Survey</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-layout">
+    <div class="layout-inner">
+      <nav class="progress-nav" aria-label="Survey progress">
+        <ol class="progress-nav__list">
+          <li class="progress-nav__item">
+            <a href="index.html">Introduction</a>
+          </li>
+          <li class="progress-nav__item">
+            <a href="question.html">Hours <small>(Question 1)</small></a>
+          </li>
+          <li class="progress-nav__item progress-nav__item--current">
+            <span aria-current="page">Submission</span>
+          </li>
+        </ol>
+      </nav>
+
+      <main class="main-content" id="main-content">
+        <div id="error-summary-mount" aria-live="polite"></div>
+
+        <h1 class="page-heading">Ready to submit?</h1>
+
+        <section class="info-box">
+          <p>To <strong>review, change or return to your survey</strong> use the 'Back' button below.</p>
+          <p>You must select 'Submit' to send us your completed survey. If you don't submit it, your answers will not be received.</p>
+        </section>
+
+        <h2 style="font-size: 1.25rem; margin-bottom: var(--space-3);">Your answers</h2>
+        <dl class="review-list">
+          <div class="review-list__row">
+            <dt class="review-list__term">Question 1: Ordinary standard weekly hours</dt>
+            <dd class="review-list__desc" id="answer-hours">Not answered</dd>
+            <dd class="review-list__edit"><a href="question.html">Change<span class="visually-hidden"> answer for ordinary standard weekly hours</span></a></dd>
+          </div>
+        </dl>
+
+        <form id="submit-form" action="thank-you.html" method="get">
+          <div class="btn-row">
+            <a href="question.html" class="btn btn--secondary">
+              <span aria-hidden="true">←</span> Back
+            </a>
+            <button type="submit" id="submit-btn" class="btn btn--primary">
+              Submit <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <p id="submit-help" class="visually-hidden" aria-live="polite"></p>
+        </form>
+
+        <p class="save-exit-link"><a href="save-exit.html">Save &amp; Exit →</a></p>
+      </main>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-heading">Helpful links</h2>
+      <p class="footer-note">These links open in a new tab.</p>
+      <ul class="footer-links">
+        <li><a href="#" target="_blank" rel="noopener"><span>Contact Us</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Privacy</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Information Use</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Copyright</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    /* If the user answered Q1, show the value and enable Submit.
+       If not, show an error summary, mark the answer as missing,
+       AND disable the Submit button. The disabled state remains focusable
+       so screen-reader users can still discover it. */
+    (function () {
+      var answerEl = document.getElementById('answer-hours');
+      var mount = document.getElementById('error-summary-mount');
+      var submitForm = document.getElementById('submit-form');
+      var submitBtn = document.getElementById('submit-btn');
+      var submitHelp = document.getElementById('submit-help');
+
+      var hours = null;
+      try { hours = sessionStorage.getItem('ies.hours'); } catch (e) {}
+
+      if (hours) {
+        answerEl.textContent = hours;
+        answerEl.classList.remove('review-list__desc--missing');
+      } else {
+        answerEl.textContent = 'Not answered';
+        answerEl.classList.add('review-list__desc--missing');
+
+        mount.innerHTML =
+          '<section class="error-summary" role="alert" aria-labelledby="error-title" tabindex="-1">' +
+            '<h2 class="error-summary__title" id="error-title">There is a problem</h2>' +
+            '<p>Please correct the following before submission:</p>' +
+            '<ul>' +
+              '<li><a href="question.html#hours-hhmm">Question 1: Hours has not been answered</a></li>' +
+            '</ul>' +
+          '</section>';
+
+        submitBtn.setAttribute('aria-disabled', 'true');
+        submitBtn.setAttribute('aria-describedby', 'submit-help');
+        submitHelp.textContent = 'Submit is unavailable until all questions are answered.';
+
+        submitForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var summary = mount.querySelector('.error-summary');
+          if (summary) {
+            summary.focus();
+            summary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        submitBtn.addEventListener('click', function (e) {
+          if (submitBtn.getAttribute('aria-disabled') === 'true') {
+            e.preventDefault();
+            var summary = mount.querySelector('.error-summary');
+            if (summary) {
+              summary.focus();
+              summary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      }
+
+      submitForm.addEventListener('submit', function () {
+        if (hours) {
+          try { sessionStorage.removeItem('ies.hours'); } catch (e) {}
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
