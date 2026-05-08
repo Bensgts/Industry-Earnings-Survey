@@ -8,20 +8,20 @@ Introduction — Industry Earnings Survey
 Pages
 The prototype is a five-page static website that supports which supports the complete user task of answering a survey question and submitting it. 
 index.html - Introduction and overview of the survey
-
 question.html - Survey question with two alternative input formats and on-submit validation
-
 submit.html - Review answers and submit, with an error summary if any question is unanswered
 thank-you.html - Confirmation that the survey has been submitted
-
 save-exit.html - Confirmation that progress has been saved when the respondent exits early
 styles.css - Shared stylesheet for all pages
 
 
 User task
 •	Begin at the introduction page, answer the hours question (in either HH:MM or decimal form), review your answer on the submission page, and submit. 
+
 •	Use the back and next buttons, and the left-hand navigation menu to navigate the website.
+
 •	Navigating to the submission page without answering or answering in the wrong format  triggers the error summary pattern.
+
 •	Click either save & exit button at any point to see the saved progress confirmation.
 
 User goal
