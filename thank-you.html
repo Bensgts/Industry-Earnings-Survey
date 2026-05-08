@@ -7,7 +7,7 @@
   <meta name="description" content="Your survey response has been submitted successfully.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,15 +16,17 @@
   <header class="site-header">
     <div class="site-header__utility">
       <div class="utility-inner">
-        <ul class="utility-nav">
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Survey Information</a></li>
-        </ul>
+        <nav aria-label="Site utility">
+          <ul class="utility-nav-list">
+            <li><a class="toolbar-link" href="#">Help</a></li>
+            <li><a class="toolbar-link" href="#">Contact Us</a></li>
+            <li><a class="toolbar-link" href="#">Survey Information</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <div class="site-header__banner">
-      <div class="banner-inner">
+    <div class="site-header__title">
+      <div class="title-inner">
         <p class="site-title">Industry Earnings Survey</p>
       </div>
     </div>
@@ -49,7 +51,7 @@
           window after you have exited the form.
         </p>
 
-        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+        <p style="color: var(--c-charcoal); font-size: 0.95rem;">
           If you have questions about your submission, please use the <a href="#">Contact Us</a> link.
         </p>
 
@@ -65,10 +67,10 @@
       <h2 class="footer-heading">Helpful links</h2>
       <p class="footer-note">These links open in a new tab.</p>
       <ul class="footer-links">
-        <li><a href="#" target="_blank" rel="noopener">Contact Us <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
-        <li><a href="#" target="_blank" rel="noopener">Privacy <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
-        <li><a href="#" target="_blank" rel="noopener">Information Use <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
-        <li><a href="#" target="_blank" rel="noopener">Copyright <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Contact Us</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Privacy</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Information Use</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="#" target="_blank" rel="noopener"><span>Copyright</span> <span class="external-icon" aria-hidden="true">↗</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
       </ul>
     </div>
   </footer>
