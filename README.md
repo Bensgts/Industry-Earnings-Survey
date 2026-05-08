@@ -27,14 +27,10 @@ The prototype is a five-page static website that supports which supports the com
 
 ## User task
 
-•	Begin at the introduction page, answer the hours question (in either HH:MM or decimal form), review your answer on the submission page, and submit. 
-
-•	Use the back and next buttons, and the left-hand navigation menu to navigate the website.
-
-•	Navigating to the submission page without answering or answering in the wrong format  triggers the error summary pattern.
-
-•	Click either save & exit button at any point to see the saved progress confirmation.
+* Begin at the introduction page, answer the hours question (in either HH:MM or decimal form), review your answer on the submission page, and submit. 
+* Use the back and next buttons, and the left-hand navigation menu to navigate the website.
+* Navigating to the submission page without answering or answering in the wrong format  triggers the error summary pattern.
+* Click either save & exit button at any point to see the saved progress confirmation.
 
 ## User goal
-
 Access the website to complete and submit the survey as easily and accurately as possible through clear and simple methods for reporting statistical information.
