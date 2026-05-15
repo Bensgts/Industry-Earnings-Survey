@@ -1,7 +1,7 @@
 # Industry Earnings Survey - Interactive Prototype
 
 The web-based prototype represents a government style survey. Using to basis of a high-fidelity Figma design it incorporates HTML and CSS to create a fully functioning website. The prototype demonstrates use of semantic HTML, accessible interaction states, and user-centred design principles.
-
+The prototype was designed iteratively in CodePen. Semantic HTML was used as the basis then CSS was applied reflecting the style elements from the high fidelity Figma prototype. The source Figma prototype can be found at: https://www.figma.com/design/WEadueZauvI1aJOoIZgrHO/Industry-Earnings-Survey-Interactive-Prototype?node-id=0-1&t=eZp7FLUnNfQWpzeA-1
 
 ## Live prototype
 
